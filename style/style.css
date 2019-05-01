@@ -7,6 +7,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
 header {
   width: 100%;
   height: 100px;
@@ -28,7 +38,6 @@ header img {
 
 header h1 {
   color: #ffffff;
-  font-weight: normal;
 }
 
 section {
@@ -55,6 +64,89 @@ section select:focus {
   outline: none;
 }
 
+#infoWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.left-column,
+.right-column {
+  min-height: 500px;
+  width: 50%;
+  border: 1px solid #cecece;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column .crypto-info {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cecece;
+}
+
+.left-column .crypto-info img {
+  color: #414141;
+  margin: 0 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.left-column .crypto-info h2 {
+  font-size: 24px;
+}
+.left-column .crypto-info span {
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.left-column .price-list,
+.right-column .price-caps,
+.right-column .changes-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-column .price-list li,
+.right-column .price-caps li,
+.right-column .changes-list li {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #cecece;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.left-column .price-list li:nth-child(odd) {
+  background-color: #cecece;
+}
+.left-column .price-list li span {
+  margin: 0 20px;
+}
+.right-column .price-caps li {
+  height: 50px;
+}
+.right-column .price-caps li.highest span:nth-child(2) {
+  color: #2c8f39;
+}
+.right-column .price-caps li.lowest span:nth-child(2) {
+  color: #d82a2a;
+}
+
+.right-column span {
+  margin: 0 20px;
+}
+span.red {
+  color: #d82a2a;
+}
+span.green {
+  color: #2c8f39;
+}
 @media (max-width: 1024px) {
   section {
     width: 90%;
@@ -79,5 +171,23 @@ section select:focus {
   }
   section select {
     width: 100%;
+  }
+
+  #infoWrapper {
+    flex-direction: column;
+  }
+  .left-column,
+  .right-column {
+    width: 100%;
+    min-height: 300px;
+  }
+  .left-column .crypto-info h2,
+  .left-column .crypto-info span {
+    font-size: 18px;
+  }
+  .right-column .price-caps li,
+  .right-column .changes-list li {
+    fsz: 14px;
+    height: 60px;
   }
 }

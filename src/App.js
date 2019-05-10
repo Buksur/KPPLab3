@@ -48,7 +48,7 @@ class App extends Component {
   render() {
     function importAll(r) {
       let images = {};
-      r.keys().map((item, index) => {
+      r.keys().map(item => {
         images[item.replace('./', '')] = r(item);
       });
       return images;
